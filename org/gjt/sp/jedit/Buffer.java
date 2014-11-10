@@ -346,6 +346,8 @@ public class Buffer extends JEditBuffer
 	/**
 	 * Autosaves this buffer.
 	 */
+	
+// Her er autosave metoden som blev implementeret
 	public void autosave()
 	{
 		if(autosaveFile == null || !getFlag(AUTOSAVE_DIRTY)
@@ -361,6 +363,10 @@ public class Buffer extends JEditBuffer
 	} //}}}
 
 	//{{{ saveAs() method
+	
+	
+	
+	
 	/**
 	 * Prompts the user for a file to save this buffer to.
 	 * @param view The view

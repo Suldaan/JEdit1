@@ -35,7 +35,11 @@ import org.gjt.sp.util.Log;
  */
 class Autosave implements ActionListener
 {
-	//{{{ setInterval() method
+
+/*Interval, her kan man angive efter hvor ang tid skal interval køre*/ 
+	
+	
+	
 	public static void setInterval(int interval)
 	{
 		if(interval == 0)
@@ -59,6 +63,10 @@ class Autosave implements ActionListener
 		else
 			timer.setDelay(interval);
 	} //}}}
+	
+	
+	
+	
 
 	//{{{ stop() method
 	public static void stop()
