@@ -1,0 +1,156 @@
+Log file created on Mon Nov 03 15:53:32 CET 2014
+IMPORTANT:
+Because updating this file after every log message would kill
+performance, it will be *incomplete* unless you invoke the
+Utilities->Troubleshooting->Update Activity Log on Disk command!
+15:53:32 [main] [message] Log: When reporting bugs, please include the following information:
+15:53:32 [main] [message] Log: java.version=1.7.0_55
+15:53:32 [main] [message] Log: java.vm.version=24.55-b03
+15:53:32 [main] [message] Log: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+15:53:32 [main] [message] Log: java.runtime.version=1.7.0_55-b13
+15:53:32 [main] [message] Log: java.runtime.name=Java(TM) SE Runtime Environment
+15:53:32 [main] [message] Log: java.vendor=Oracle Corporation
+15:53:32 [main] [message] Log: java.compiler=null
+15:53:32 [main] [message] Log: os.name=Windows 8.1
+15:53:32 [main] [message] Log: os.version=6.3
+15:53:32 [main] [message] Log: os.arch=amd64
+15:53:32 [main] [message] Log: user.home=C:\Users\Abdinasir
+15:53:32 [main] [message] Log: java.home=C:\Program Files\Java\jre7
+15:53:32 [main] [message] Log: java.class.path=C:\Users\Abdinasir\Documents\GitHub\jEdit\build\jedit.jar
+15:53:32 [main] [message] jEdit: starting with command line arguments: -settings=C:\Users\Abdinasir\Documents\GitHub\jEdit\build/settings
+15:53:32 [main] [debug] jEdit: before splash screen activation:50 ms
+15:53:32 [main] [debug] jEdit: after splash screen activation:330 ms
+15:53:32 [main] [notice] jEdit: jEdit version 5.1.0
+15:53:32 [main] [message] jEdit: Settings directory is C:\Users\Abdinasir\Documents\GitHub\jEdit\build\settings
+15:53:32 [main] [message] jEdit: jEdit home directory is C:\Users\Abdinasir\Documents\GitHub\jEdit\build
+15:53:32 [main] [debug] SplashScreen: init:25/285ms
+15:53:32 [main] [debug] SplashScreen: init system properties:35/320ms
+15:53:32 [main] [message] BeanShell: Beanshell Init
+15:53:32 [main] [debug] SplashScreen: init beanshell:80/400ms
+15:53:32 [main] [debug] SplashScreen: loading site properties:5/405ms
+15:53:32 [main] [debug] SplashScreen: loading user properties:30/435ms
+15:53:32 [main] [debug] GUIUtilities: Icon theme set to: tango
+15:53:32 [main] [debug] GUIUtilities: Loading icon theme from: jeditresource:/org/gjt/sp/jedit/icons/themes/tango/
+15:53:32 [main] [debug] SplashScreen: init GUI:5/440ms
+15:53:32 [main] [debug] EditServer: jEdit server started on port 49361
+15:53:32 [main] [debug] EditServer: Authorization key is 968012933
+15:53:32 [main] [debug] SplashScreen: init server:10/450ms
+15:53:32 [main] [debug] jEdit: initPLAF non-edt old=javax.swing.plaf.metal.MetalLookAndFeel requested=null new=javax.swing.plaf.metal.MetalLookAndFeel
+15:53:32 [main] [warning] jEdit: initPLAF failed to set required l&f
+15:53:32 [main] [debug] SplashScreen: init look and feel:5/455ms
+15:53:32 [main] [debug] SplashScreen: init VFS Manager:0/455ms
+15:53:32 [main] [debug] ActionSet: Loading actions from jar:file:/C:/Users/Abdinasir/Documents/GitHub/jEdit/build/jedit.jar!/org/gjt/sp/jedit/actions.xml
+15:53:32 [main] [debug] DockableWindowManager: Loading dockables from jar:file:/C:/Users/Abdinasir/Documents/GitHub/jEdit/build/jedit.jar!/org/gjt/sp/jedit/dockables.xml
+15:53:32 [main] [debug] SplashScreen: init resources:152/607ms
+15:53:32 [main] [debug] KeymapManagerImpl: copyKeymap(jEdit,imported)
+15:53:32 [main] [debug] KeymapManagerImpl: Copying C:\Users\Abdinasir\Documents\GitHub\jEdit\build\keymaps\jEdit_keys.props to C:\Users\Abdinasir\Documents\GitHub\jEdit\build\settings\keymaps\imported_keys.props
+15:53:32 [AWT-EventQueue-0] [debug] EditBus: SearchSettingsChanged[source=null]
+15:53:32 [main] [debug] SplashScreen: Migrate keymaps:131/738ms
+15:53:32 [main] [notice] jEdit: Loading plugins from C:\Users\Abdinasir\Documents\GitHub\jEdit\build\jars
+15:53:32 [main] [debug] PluginJAR: Opening C:\Users\Abdinasir\Documents\GitHub\jEdit\build\jars\QuickNotepad.jar
+15:53:32 [main] [debug] ActionSet: Loading actions from jeditresource:/QuickNotepad.jar!/actions.xml
+15:53:32 [main] [debug] DockableWindowManager: Loading dockables from jeditresource:/QuickNotepad.jar!/dockables.xml
+15:53:32 [main] [debug] PluginJAR: Writing C:\Users\Abdinasir\Documents\GitHub\jEdit\build\settings\jars-cache\QuickNotepad.jar.summary
+15:53:32 [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=LOADED,exit=false,version=5.0,source=C:\Users\Abdinasir\Documents\GitHub\jEdit\build\jars\QuickNotepad.jar,class=QuickNotepadPlugin]
+15:53:32 [main] [notice] jEdit: Loading plugins from C:\Users\Abdinasir\Documents\GitHub\jEdit\build\settings\jars
+15:53:32 [main] [debug] SplashScreen: init plugins:74/812ms
+15:53:32 [main] [debug] SplashScreen: init history model:2/814ms
+15:53:32 [main] [debug] SplashScreen: init buffer history:2/816ms
+15:53:32 [main] [debug] SplashScreen: init killring:1/817ms
+15:53:32 [main] [message] CheckFileStatus: Performing migration step: checkFileStatus
+15:53:32 [main] [debug] jEdit: initPLAF non-edt old=javax.swing.plaf.metal.MetalLookAndFeel requested=null new=javax.swing.plaf.metal.MetalLookAndFeel
+15:53:32 [main] [warning] jEdit: initPLAF failed to set required l&f
+15:53:32 [main] [debug] jEdit: SOCKS proxy disabled
+15:53:32 [main] [debug] jEdit: HTTP proxy disabled
+15:53:33 [AWT-EventQueue-0] [debug] EditBus: PropertiesChanged[source=null]
+15:53:33 [main] [debug] SplashScreen: init various properties:87/904ms
+15:53:33 [main] [message] jEdit: Loading mode catalog file C:\Users\Abdinasir\Documents\GitHub\jEdit\build\modes\catalog
+15:53:33 [main] [message] jEdit: Loading mode catalog file C:\Users\Abdinasir\Documents\GitHub\jEdit\build\settings\modes\catalog
+15:53:33 [main] [debug] SplashScreen: init modes:100/1004ms
+15:53:33 [main] [debug] SplashScreen: activate plugins:6/1010ms
+15:53:33 [main] [debug] Macros: Registered beanshell macro handler
+15:53:33 [AWT-EventQueue-0] [debug] EditBus: DynamicMenuChanged[menu=macros,source=null]
+15:53:33 [main] [message] BeanShell: Running script C:\Users\Abdinasir\Documents\GitHub\jEdit\build\startup\startup.bsh
+15:53:33 [main] [notice] jEdit$3: Loading edit mode C:\Users\Abdinasir\Documents\GitHub\jEdit\build\modes\text.xml
+15:53:33 [main] [debug] String: BeanShell interpreter version 2.0b4-jedit
+15:53:33 [main] [debug] SplashScreen: init macros:235/1245ms
+15:53:33 [main] [debug] SplashScreen: init macros:236/1246ms
+15:53:33 [main] [debug] SplashScreen: init macros:237/1247ms
+15:53:33 [main] [debug] jEdit: main done:1343 ms
+15:53:33 [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=PROPERTIES_CHANGED,view=null,source=Untitled-1 (%USERPROFILE%\)]
+15:53:33 [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=CREATED,view=null,source=Untitled-1 (%USERPROFILE%\)]
+15:53:33 [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=LOAD_STARTED,view=null,source=Untitled-1 (%USERPROFILE%\)]
+15:53:33 [AWT-EventQueue-0] [debug] EditBus: BufferUpdate[what=LOADED,view=null,source=Untitled-1 (%USERPROFILE%\)]
+15:53:33 [AWT-EventQueue-0] [debug] BufferSet: 1692139063: addBufferSetListener org.gjt.sp.jedit.EditPane[inactive]
+15:53:33 [AWT-EventQueue-0] [debug] EditBus: BufferChanging[what=BUFFER_CHANGING,source=org.gjt.sp.jedit.EditPane[inactive]]
+15:53:33 [AWT-EventQueue-0] [debug] jEdit: checkBufferStatus for current buffer: null
+15:53:33 [AWT-EventQueue-0] [debug] BufferSet: 1692139063 addBufferAt(Untitled-1 (%USERPROFILE%\),-1)
+15:53:33 [AWT-EventQueue-0] [debug] BufferSet: 1692139063: Buffer added Untitled-1 (%USERPROFILE%\) at 0
+15:53:33 [AWT-EventQueue-0] [debug] EditBus: EditPaneUpdate[what=CREATED,source=org.gjt.sp.jedit.EditPane[inactive]]
+15:53:34 [AWT-EventQueue-0] [debug] EditBus: ViewUpdate[what=CREATED,source=org.gjt.sp.jedit.View[active]]
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel: java.io.FileNotFoundException: C:\Users\Abdinasir\Documents\GitHub\jEdit\build\doc\whatsnew\toc.xml (Den angivne fil blev ikke fundet)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.io.FileInputStream.open(Native Method)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.io.FileInputStream.<init>(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.io.FileInputStream.<init>(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at sun.net.www.protocol.file.FileURLConnection.connect(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at sun.net.www.protocol.file.FileURLConnection.getInputStream(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.net.URL.openStream(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.jedit.help.HelpTOCPanel.loadTOC(HelpTOCPanel.java:213)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.jedit.help.HelpTOCPanel.createTOC(HelpTOCPanel.java:170)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.jedit.help.HelpTOCPanel.access$200(HelpTOCPanel.java:49)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.jedit.help.HelpTOCPanel$2.run(HelpTOCPanel.java:111)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.util.TaskManager$MyTask._run(TaskManager.java:258)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.util.Task.run(Task.java:64)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.lang.Thread.run(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel: java.io.FileNotFoundException: C:\Users\Abdinasir\Documents\GitHub\jEdit\build\doc\users-guide\toc.xml (Den angivne fil blev ikke fundet)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.io.FileInputStream.open(Native Method)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.io.FileInputStream.<init>(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.io.FileInputStream.<init>(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at sun.net.www.protocol.file.FileURLConnection.connect(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at sun.net.www.protocol.file.FileURLConnection.getInputStream(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.net.URL.openStream(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.jedit.help.HelpTOCPanel.loadTOC(HelpTOCPanel.java:213)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.jedit.help.HelpTOCPanel.createTOC(HelpTOCPanel.java:171)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.jedit.help.HelpTOCPanel.access$200(HelpTOCPanel.java:49)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.jedit.help.HelpTOCPanel$2.run(HelpTOCPanel.java:111)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.util.TaskManager$MyTask._run(TaskManager.java:258)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.util.Task.run(Task.java:64)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.lang.Thread.run(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel: java.io.FileNotFoundException: C:\Users\Abdinasir\Documents\GitHub\jEdit\build\doc\FAQ\toc.xml (Den angivne fil blev ikke fundet)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.io.FileInputStream.open(Native Method)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.io.FileInputStream.<init>(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.io.FileInputStream.<init>(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at sun.net.www.protocol.file.FileURLConnection.connect(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at sun.net.www.protocol.file.FileURLConnection.getInputStream(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.net.URL.openStream(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.jedit.help.HelpTOCPanel.loadTOC(HelpTOCPanel.java:213)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.jedit.help.HelpTOCPanel.createTOC(HelpTOCPanel.java:172)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.jedit.help.HelpTOCPanel.access$200(HelpTOCPanel.java:49)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.jedit.help.HelpTOCPanel$2.run(HelpTOCPanel.java:111)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.util.TaskManager$MyTask._run(TaskManager.java:258)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at org.gjt.sp.util.Task.run(Task.java:64)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+15:53:34 [jEdit Worker #0] [error] HelpTOCPanel:  at java.lang.Thread.run(Unknown Source)
+15:53:34 [jEdit Worker #0] [notice] HelpTOCPanel: The API docs for jEdit will not be available (reinstall jEdit if you want them)
+15:53:34 [AWT-EventQueue-0] [debug] EditBus: EditorStarted[source=null]
+15:53:34 [AWT-EventQueue-0] [message] jEdit: Startup complete: 2209 ms
+15:53:34 [AWT-EventQueue-0] [debug] EditBus: ViewUpdate[what=VIEW_ACTIVATED,source=org.gjt.sp.jedit.View[active]]
+15:53:34 [AWT-EventQueue-0] [debug] JEditTextArea: InputMethodSupport is activated
+15:54:51 [AWT-EventQueue-0] [debug] EditBus: ViewUpdate[what=VIEW_ACTIVATED,source=org.gjt.sp.jedit.View[active]]
+15:54:51 [AWT-EventQueue-0] [debug] jEdit: checkBufferStatus for all buffers
+15:54:53 [AWT-EventQueue-0] [debug] EditBus: EditorExitRequested[source=org.gjt.sp.jedit.View[active]]
+15:54:53 [AWT-EventQueue-0] [message] PerspectiveManager: Saving C:\Users\Abdinasir\Documents\GitHub\jEdit\build\settings\perspective.xml
+15:54:53 [AWT-EventQueue-0] [debug] MiscUtilities: Saving backup of file "C:\Users\Abdinasir\Documents\GitHub\jEdit\build\settings\perspective.xml" to "C:\Users\Abdinasir\Documents\GitHub\jEdit\build\settings\settings-backup\perspective.xml~1~"
+15:54:53 [AWT-EventQueue-0] [debug] EditBus: EditorExiting[source=null]
+15:54:53 [AWT-EventQueue-0] [debug] EditBus: ViewUpdate[what=CLOSED,source=org.gjt.sp.jedit.View[active]]
+15:54:53 [AWT-EventQueue-0] [debug] EditBus: EditPaneUpdate[what=DESTROYED,source=org.gjt.sp.jedit.EditPane[active]]
+15:54:53 [AWT-EventQueue-0] [debug] BufferSet: 1692139063: Buffer removed Untitled-1 (%USERPROFILE%\)
+15:54:53 [AWT-EventQueue-0] [debug] BufferSetManager: Buffer:Untitled-1 (%USERPROFILE%\) is in no bufferSet anymore, closing it
+15:54:53 [AWT-EventQueue-0] [debug] EditBus: PluginUpdate[what=UNLOADED,exit=true,version=5.0,source=C:\Users\Abdinasir\Documents\GitHub\jEdit\build\jars\QuickNotepad.jar,class=QuickNotepadPlugin]
+15:54:53 [AWT-EventQueue-0] [message] BufferHistory: Saving C:\Users\Abdinasir\Documents\GitHub\jEdit\build\settings\recent.xml
+15:54:53 [AWT-EventQueue-0] [message] KillRing: Saving C:\Users\Abdinasir\Documents\GitHub\jEdit\build\settings\killring.xml
