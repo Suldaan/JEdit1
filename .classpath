@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="de/|doclet/|misc/|net/|test/" kind="src" path=""/>
+	<classpathentry including="org/" kind="src" path=""/>
 	<classpathentry kind="lib" path="lib/ant-contrib/ant-contrib.jar"/>
 	<classpathentry kind="lib" path="lib/ant-contrib/ant.jar"/>
 	<classpathentry kind="lib" path="lib/default-plugins/MacOSX.jar"/>
@@ -49,7 +49,7 @@
 	<classpathentry kind="lib" path="lib/test/hamcrest-library.jar"/>
 	<classpathentry kind="lib" path="lib/test/junit-dep.jar"/>
 	<classpathentry kind="lib" path="lib/launch4j/launch4j-win32.zip"/>
-	<classpathentry kind="lib" path="lib/compile/jsr305.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/runtime/jsr305.jar"/>
 	<classpathentry kind="output" path="build"/>
 </classpath>
