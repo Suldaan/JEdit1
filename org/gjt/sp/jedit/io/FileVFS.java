@@ -494,7 +494,7 @@ public class FileVFS extends VFS
 		}
 
 		File file = new File(directory);
-
+		file.setWritable(false);
 		boolean retVal = file.mkdir();
 		String canonPath;
 		try
@@ -543,6 +543,7 @@ public class FileVFS extends VFS
 		int permissions = buffer.getIntegerProperty(PERMISSIONS_PROPERTY,0);
 		setPermissions(path,permissions);
 	} //}}}
+	
 
 	//{{{ Permission preservation code
 
@@ -646,4 +647,5 @@ public class FileVFS extends VFS
 	//{{{ Private members
 	private static FileSystemView fsView = null;
 	//}}}
+	
 }
