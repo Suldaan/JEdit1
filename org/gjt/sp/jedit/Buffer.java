@@ -258,6 +258,10 @@ public class Buffer extends JEditBuffer
 				undoMgr.clear();
 				undoMgr.setLimit(jEdit.getIntegerProperty(
 					"buffer.undoCount",100));
+				if (!getFlag(NEW_FILE)){
+					undoMgr.loadUndoRedoHistory(name);
+				}
+
 
 				// If the buffer is temporary, we don't need to
 				// call finishLoading() because it sets the FoldHandler
@@ -297,11 +301,11 @@ public class Buffer extends JEditBuffer
 				}
 			}
 		}; //}}}
-
 		if(getFlag(TEMPORARY))
 			runnable.run();
 		else
 			AwtRunnableQueue.INSTANCE.runAfterIoTasks(runnable);
+
 
 		return true;
 	} //}}}
@@ -346,8 +350,6 @@ public class Buffer extends JEditBuffer
 	/**
 	 * Autosaves this buffer.
 	 */
-	
-// Her er autosave metoden som blev implementeret
 	public void autosave()
 	{
 		if(autosaveFile == null || !getFlag(AUTOSAVE_DIRTY)
@@ -363,10 +365,6 @@ public class Buffer extends JEditBuffer
 	} //}}}
 
 	//{{{ saveAs() method
-	
-	
-	
-	
 	/**
 	 * Prompts the user for a file to save this buffer to.
 	 * @param view The view
@@ -444,6 +442,9 @@ public class Buffer extends JEditBuffer
 	 */
 	public boolean save(final View view, String path, final boolean rename, boolean disableFileStatusCheck)
 	{
+		// Undo/Redo persistent history change request
+		undoMgr.saveUndoRedoHistory(name);
+		
 		if(isPerformingIO())
 		{
 			GUIUtilities.error(view,"buffer-multiple-io",null);
@@ -613,7 +614,6 @@ public class Buffer extends JEditBuffer
 			setPerformingIO(false);
 			return false;
 		}
-
 		// Once save is complete, do a few other things
 		AwtRunnableQueue.INSTANCE.runAfterIoTasks(new Runnable()
 			{

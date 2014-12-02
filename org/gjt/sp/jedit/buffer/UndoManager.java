@@ -23,10 +23,17 @@
 package org.gjt.sp.jedit.buffer;
 
 //{{{ Imports
+import java.util.ArrayList;
+import java.util.List;
+
 import org.gjt.sp.util.IntegerArray;
 import org.gjt.sp.util.Log;
+import org.gjt.sp.jedit.bufferio.BufferUndoRedoHistoryReader;
+import org.gjt.sp.jedit.bufferio.BufferUndoRedoHistoryWriter;
 import org.gjt.sp.jedit.textarea.Selection;
 //}}}
+
+//import bsh.org.objectweb.asm.Type;
 
 /**
  * A class internal to jEdit's document model. You should not use it
@@ -401,6 +408,111 @@ public class UndoManager
 		}
 		return null;
 	} //}}}
+	
+	// Undo/Redo history change request methods
+	public void saveUndoRedoHistory(String name) {
+		Edit tempEdit;
+		tempEdit = undosFirst;
+		BufferUndoRedoHistoryWriter writer = new BufferUndoRedoHistoryWriter(name);
+		while (tempEdit.next != null) {
+			// Serialize tempEdit and write to disk via BufferUndoRedoHistoryWriter
+			writer.addEdit(tempEdit.serialize());
+			tempEdit = tempEdit.next;
+			
+		}
+		writer.writeToDisk();
+	}
+	
+	public void loadUndoRedoHistory(String path) {
+		BufferUndoRedoHistoryReader reader = new BufferUndoRedoHistoryReader(path);
+		List<String> undoRedoContent = new ArrayList<String>();
+		List<Edit> newEditsList = new ArrayList<Edit>();
+		undoRedoContent = reader.readFromDisk();
+		int typeChecker = 0;
+		
+		for (String edit : undoRedoContent) {
+			Edit newEdit;
+			
+			if (edit.startsWith("org.gjt.sp.jedit.buffer.UndoManager$Remove")){
+				typeChecker = 0;
+			}
+			else if (edit.startsWith("org.gjt.sp.jedit.buffer.UndoManager$Insert")){
+				typeChecker = 1;
+			}
+			else if (edit.startsWith("org.gjt.sp.jedit.buffer.UndoManager$Replace")) {
+				typeChecker = 2;
+			}
+
+			
+			switch (typeChecker) {
+			case 0:
+				newEdit = (Remove) createRemoveFromHistory(edit);
+				newEditsList.add(newEdit);
+				break;
+			case 1:
+				newEdit = (Insert) createInsertFromHistory(edit);
+				newEditsList.add(newEdit);
+				break;
+			case 2:
+				newEdit = (Replace) createReplaceFromHistory(edit);
+				newEditsList.add(newEdit);
+				break;
+			default:
+				System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+				break;
+			}
+		}
+		
+		
+		if (newEditsList.size() > 1) {
+			undosFirst = undosLast = newEditsList.get(0);
+			for (int i = 1 ; i < newEditsList.size() ; i++) {
+				addEdit(newEditsList.get(i));
+			}
+		}
+	}
+	
+	private Insert createInsertFromHistory(String edit) {
+		String[] splitEdit;
+		splitEdit = edit.split(",");
+		String offsetString = splitEdit[1];
+		int offset = Integer.parseInt(offsetString);
+		String str = splitEdit[2];
+		
+		return new Insert(offset , str);
+	}
+	
+	private Remove createRemoveFromHistory(String edit) {
+		String[] splitEdit;
+		splitEdit = edit.split(",");
+		String offsetString = splitEdit[1];
+		int offset = Integer.parseInt(offsetString);
+		String str = splitEdit[2];
+		
+		return new Remove(offset, str);
+	}
+	
+	private Replace createReplaceFromHistory(String edit) {
+		String[] splitEdit;
+		splitEdit = edit.split(",");
+		String offsetString = splitEdit[1];
+		int offset = Integer.parseInt(offsetString);
+		String strRemove = splitEdit[2];
+		String strInsert = splitEdit[3];
+		
+		return new Replace(offset, strRemove, strInsert);
+	}
+	// unused
+	private CompoundEdit createCompoundEditFromHistory(String edit) {
+		
+		return new CompoundEdit();
+	}
+	// Used for testing undo/redo history
+	public String createInsertSerialize(int offset, String str) {
+		Insert insert = (Insert) new Insert(offset, str);
+		String serializedString = insert.serialize();
+		return serializedString;
+	}
 
 	//{{{ Inner classes
 
@@ -436,6 +548,14 @@ public class UndoManager
 		 */
 		abstract Selection[] redo(UndoManager mgr);
 		//}}}
+		
+		//{{{ serialize() method
+		/**
+		 * Serializes an <code>Edit</code> object for use in the 
+		 * <code>UndoHistoryFileWriter</code> to provide persistent 
+		 * undo/redo history.
+		 */
+		abstract String serialize();
 	} //}}}
 
 	//{{{ Insert class
@@ -467,6 +587,16 @@ public class UndoManager
 				mgr.buffer.setDirty(false);
 			int caret = offset + str.length();
 			return new Selection[] { new Selection.Range(caret, caret) };
+		} //}}}
+		
+		//{{{ serialize() method
+		@Override
+		String serialize() {
+			StringBuilder serializedString = new StringBuilder();
+			serializedString.append(this.getClass().getName() + ",");
+			serializedString.append(this.offset + ",");
+			serializedString.append(this.str);
+			return serializedString.toString();
 		} //}}}
 
 		int offset;
@@ -503,6 +633,16 @@ public class UndoManager
 			if(mgr.redoClearDirty == this)
 				mgr.buffer.setDirty(false);
 			return new Selection[] { new Selection.Range(offset, offset) };
+		} //}}}
+		
+		//{{{ serialize() method
+		@Override
+		String serialize() {
+			StringBuilder serializedString = new StringBuilder();
+			serializedString.append(this.getClass().getName() + ",");
+			serializedString.append(this.offset + ",");
+			serializedString.append(this.str);
+			return serializedString.toString();
 		} //}}}
 
 		int offset;
@@ -544,6 +684,17 @@ public class UndoManager
 			return new Selection[] { new Selection.Range(caret, caret) };
 		} //}}}
 
+		//{{{ serialize() method
+		@Override
+		String serialize() {
+			StringBuilder serializedString = new StringBuilder();
+			serializedString.append(this.getClass().getName() + ",");
+			serializedString.append(this.offset + ",");
+			serializedString.append(this.strRemove + ",");
+			serializedString.append(this.strInsert);
+			return serializedString.toString();
+		} //}}}
+		
 		int offset;
 		String strRemove, strInsert;
 	} //}}}
@@ -595,6 +746,20 @@ public class UndoManager
 			}
 			return s;
 		} //}}}
+
+		//{{{ serialize() method
+		//{{{ serialize() method
+		@Override
+		String serialize() {
+			StringBuilder serializedString = new StringBuilder();
+			serializedString.append(this.getClass().getName() + ",");
+			serializedString.append(this.offsets.getArray() + ",");
+			serializedString.append(this.strRemove + ",");
+			serializedString.append(this.strInsert);
+			//String[] serializedContent = {this.getClass().getName(), Arrays.toString(this.offsets.getArray()), this.strRemove, this.strInsert };
+			return serializedString.toString();
+		} //}}}
+
 
 		IntegerArray offsets;
 	} //}}}
@@ -696,6 +861,22 @@ public class UndoManager
 				last = edit;
 			}
 		} //}}}
+		
+		//{{{ serialize() method
+		@Override
+		String serialize() {
+			StringBuilder serializedString = new StringBuilder();
+			Edit tempEdit = first;
+			while (tempEdit.next != null) {
+				String tempString = tempEdit.serialize();
+				serializedString.append(tempString + ";");
+				tempEdit = tempEdit.next;
+			}
+			serializedString.deleteCharAt(serializedString.length()-1);
+			
+			return serializedString.toString();
+		} //}}}
+
 
 		Edit first, last;
 	} //}}}
