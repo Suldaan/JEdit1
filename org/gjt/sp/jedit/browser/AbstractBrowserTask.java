@@ -66,7 +66,6 @@ abstract class AbstractBrowserTask extends Task
 	private class MyTaskListener implements TaskListener
 	{
 		private final Runnable runnable;
-	
 
 		private MyTaskListener(Runnable runnable)
 		{
