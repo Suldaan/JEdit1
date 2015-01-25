@@ -495,7 +495,6 @@ public class FileVFS extends VFS
 
 		File file = new File(directory);
 		file.setWritable(false);
-		
 		boolean retVal = file.mkdir();
 		String canonPath;
 		try
