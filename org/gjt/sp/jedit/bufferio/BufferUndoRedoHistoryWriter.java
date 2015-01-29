@@ -16,7 +16,7 @@ public class BufferUndoRedoHistoryWriter {
 	public BufferUndoRedoHistoryWriter(String fileName) {
 		this.fileName = fileName;
 		this.path = "C:/" + this.fileName + ".txt";
-		this.path = "C:\\Users\\Bullari\\Desktop\\" + this.fileName + ".txt";
+		this.path = "C:\\Users\\Fardin\\Desktop\\" + this.fileName + ".txt";
 		this.path = path.replace('\\','/');
 		this.undoRedoHistory = new File(this.path);
 		this.undoRedoContent = new ArrayList<String>();
@@ -26,17 +26,7 @@ public class BufferUndoRedoHistoryWriter {
 		undoRedoContent.add(edit);
 	}
 	
-//	private String convertToString(String edit) {
-//		String convertedEdit = "";
-//		for (int i = 0 ; i < edit.length ; i++) {
-//			if (i != 0) {
-//				convertedEdit = convertedEdit + ", " + edit[i];
-//			} else {
-//				convertedEdit = edit[i];
-//			}
-//		}
-//		return convertedEdit;
-//	}
+
 	
 	public void writeToDisk() {
 		try {

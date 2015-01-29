@@ -9,10 +9,9 @@ import org.junit.Test;
 
 public class UndoRedoHistoryTest {
 
-	String path = "C:\\Users\\Bullari\\";
+	String path = "C:\\Users\\Fardin\\";
 	int offset = 0;
 	String strInsert = "asdf";
-	String strRemove = "asdf";
 	@Test
 	public void TestUndoRedoFileWriter() {
 		this.path = path.replace('\\','/');
@@ -27,6 +26,6 @@ public class UndoRedoHistoryTest {
 		
 		buffer.save(jEdit.getActiveView(), path + "testytest");
 
-		Assert.assertTrue("Test case 1", buffer.getLineSegment(0) == strInsert);
+		Assert.assertTrue("Test case 1", buffer.getLineSegment(0).equals(strInsert));
 	}
 }

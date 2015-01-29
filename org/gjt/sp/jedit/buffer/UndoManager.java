@@ -593,8 +593,8 @@ public class UndoManager
 		@Override
 		String serialize() {
 			StringBuilder serializedString = new StringBuilder();
-			serializedString.append(this.getClass().getName() + ",");
-			serializedString.append(this.offset + ",");
+		//	serializedString.append(this.getClass().getName() + ",");
+		//	serializedString.append(this.offset + ",");
 			serializedString.append(this.str);
 			return serializedString.toString();
 		} //}}}

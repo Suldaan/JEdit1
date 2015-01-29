@@ -15,7 +15,7 @@ public class BufferUndoRedoHistoryReader {
 	public BufferUndoRedoHistoryReader (String fileName) {
 		this.fileName = fileName;
 		this.path = "C:/" + this.fileName + ".txt";
-		this.path = "C:\\Users\\Bullari\\Desktop\\" + this.fileName + ".txt";
+		this.path = "C:\\Users\\Fardin\\Desktop\\" + this.fileName + ".txt";
 		this.path = path.replace('\\','/');
 	}
 	
